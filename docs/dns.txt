@@ -1,0 +1,12 @@
+aws route53 help
+
+aws route53 list-hosted-zones-by-name
+aws route53 list-hosted-zones
+aws route53 list-hosted-zones | jq '.HostedZones[].Id'
+aws route53 list-hosted-zones | jq '.HostedZones[].Name + " " + .HostedZones[].Id'
+
+aws route53 list-resource-record-sets --hosted-zone-id Z1RD0SSFONJ4KR
+
+aws cloudfront list-distributions | jq '.DistributionList.Items[] | .Id + " " + .DomainName + " " + .DefaultCacheBehavior.TargetOriginId' | grep fullscreen-video
+
+aws route53 change-resource-record-sets --hosted-zone-id Z1RD0SSFONJ4KR --change-batch file://dns-fullscreen-video.rudijs.com.json

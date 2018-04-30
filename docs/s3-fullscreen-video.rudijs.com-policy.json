@@ -1,0 +1,15 @@
+{
+    "Id": "Policy1524479853035",
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "Stmt1524479850470",
+        "Action": [
+          "s3:GetObject"
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::fullscreen-video.rudijs.com/*",
+        "Principal": "*"
+      }
+    ]
+  }
