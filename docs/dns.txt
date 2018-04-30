@@ -9,4 +9,10 @@ aws route53 list-resource-record-sets --hosted-zone-id Z1RD0SSFONJ4KR
 
 aws cloudfront list-distributions | jq '.DistributionList.Items[] | .Id + " " + .DomainName + " " + .DefaultCacheBehavior.TargetOriginId' | grep fullscreen-video
 
+
+https://docs.aws.amazon.com/general/latest/gr/rande.html
+Amazon CloudFront
+Amazon CloudFront distributions have a single endpoint: cloudfront.amazonaws.com and only supports HTTPS requests. When you submit requests to CloudFront programmatically, specify us-east-1 for the US East (N. Virginia) Region.
+The CloudFront hosted zone ID value is Z2FDTNDATAQYW2.
+
 aws route53 change-resource-record-sets --hosted-zone-id Z1RD0SSFONJ4KR --change-batch file://dns-fullscreen-video.rudijs.com.json
